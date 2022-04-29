@@ -1,0 +1,27 @@
+
+#POST
+#postAircraft((aircraftTest))
+#postParts(partTest)
+#postEvents(eventTest)
+# data = postEvents(eventTest)
+
+# GET
+# data2 = getAircraft("1002")
+# print(data2)
+# data3 = getPart()
+#data4 = getPart("10a1")
+# print("data: ", type(data), data)
+# print("data2: ", type(data2), data2)
+# print("data3: ", type(data3), data3)
+# print("data4: ", type(data4), data4)
+# print(data4)
+# print(priorityLevel(eventTest))
+# PUT
+# putAircraft(aircraftTest)
+#print(data4)
+#putPartNewEvent(eventTest)
+# DELETE
+# deleteEvent("2002-2asdf")
+# deletePart("10a1")
+# deleteAircraft("1001")
+# deletePartLog("10a1", "2020/3/30", "2021/3/29")

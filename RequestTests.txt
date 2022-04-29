@@ -1,0 +1,101 @@
+##################################################################################
+testPartRequest = {
+    "commonParms" : {
+    "action": "edit",
+    "view": "maintenance",
+    "version": "1.0.0"
+    },
+    "request": {
+        "type" : "part",
+        "identifiers":{
+            "cagID": "1001",
+            "serial": "10a1",
+            "name": "engine",
+            "position": "1",
+            "events" : []
+        }
+    }
+}
+print(requests(testPartRequest))
+
+
+####################################################################################
+testPartLogRequest = {
+    "commonParms" : {
+    "action": "edit",
+    "view": "maintenance",
+    "version": "1.0.0"
+    },
+    "request": {
+        "type" : "partLog",
+        "identifiers":{
+            "cagID": "1001",
+            "serial": "10a1",
+            "name": "engine",
+            "position": "1",
+            "startDate" : "2020/3/30",
+            "endDate" : "2021/3/29",
+            "events" : []
+        }
+    }
+}
+requests(testPartLogRequest)
+
+####################################################################################
+testEventRequest = {
+    "commonParms" : {
+    "action": "edit",
+    "view": "maintenance",
+    "version": "1.0.0"
+    },
+    "request": {
+        "type" : "event",
+        "identifiers":{   
+            "eventID": "2022-04-25-15:59:40-35599f03-a0d6-4259-84ba-7d82a763e6f7",
+            "cagID" : "1002",
+            "serial" : "10a1",
+            "name": "TESTING",
+            "position": "1",
+            "intervals" : [
+                {
+                    "unit" : "days",
+                    "value" : "60",
+                    "bufferValue" : "90",
+                    "lastEventDate" : "04-07-2022"
+                }
+            ],
+            "maintenanceType" : "transmission",
+            "maintenanceSubType" : "engine",
+            "esimatedDueDate" : "",
+            "dueDate" : "today",
+            "unit" : "minutes",
+            "eventDescription" : "asdf",
+            "documentName" : "Document Name",
+            "documentLoc" : "URL",
+            "eventStatus" : "in_progress",
+            "eventPriority" : 1,
+            "lastEventDate" : "03-22-2022"
+        }
+    }
+}
+print(requests(testEventRequest))
+
+
+####################################################################################
+testAircraftRequest = {
+    "commonParms" : {
+    "action": "edit",
+    "view": "maintenance",
+    "version": "1.0.0"
+    },
+    "request": {
+        "type" : "aircraft",
+        "identifiers": {
+            "cagID" : "1002",
+            "supplierID" : "999",
+            "aircraftMake" : "Boeing",
+            "aircraftModel" : "444"
+        }
+    }
+}
+requests(testAircraftRequest)
