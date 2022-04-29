@@ -1,0 +1,111 @@
+drop database seniorproject;
+create database seniorproject;
+use seniorproject; 
+create table aircraft(
+    cagID VARCHAR(15),
+    aircraft TEXT,
+    primary key (cagID)
+);
+
+create table parts(
+    serial VARCHAR(15),
+    cagID VARCHAR(15),
+    part TEXT,
+    primary key (serial),
+    foreign key (cagID) references aircraft (cagID) on delete cascade
+);
+
+create table events(
+    eventID VARCHAR(100),
+    serial VARCHAR(15),
+    event TEXT,
+    primary key (eventID),
+    foreign key (serial) references parts (serial) on delete cascade
+);
+
+create table partLogs(
+    serial VARCHAR(15),
+    name VARCHAR(15),
+    position INT,
+    partLog TEXT,
+    primary key (serial, name, position),
+    foreign key (serial) references parts (serial) on delete cascade
+);
+
+
+
+##example inserts
+###########################################################################################################################
+
+INSERT INTO aircraft VALUES("1001", '{
+    "cagID" : "1001",
+    "supplierID" : "4545",
+    "aircraftMake" : "Make1",
+    "aircraftModel" : "Model"
+}');
+
+INSERT INTO parts VALUES("10a1", "1001", '{
+    "serial" : "10a1",
+    "cagID" : "1001",
+    "name" : "engine",
+    "position" : "2",
+    "events" : ["2002-2asdf"]
+}');
+
+INSERT INTO events VALUES("2002-2asdf", "10a1", '{
+    "eventID" : "2002-2asdf",
+    "cagID" : "1001",
+    "serial" : "10a1",
+    "name" : "engine",
+    "position" : "2",
+    "intervals" : [
+        {
+            "unit" : "Hours",
+            "value" : 300,
+            "bufferValue": 180,
+            "lastEventValue" : 2
+        },
+        {
+            "unit" : "days",
+            "value" : 90,
+            "bufferValue" : 5,
+            "lastEventValue" : "8/5/2021"
+        }
+    ]
+    "maintenanceType": "oil",
+    "maintenanceSubType": "Engine",
+    "estimatedDueDate": "8/5/2021",
+    "dueDate": "8/5/2021",
+    "unit": "Minutes",
+    "event": "oil change",
+    "documentName": "Camp Card",
+    "documentLoc": "URL",
+    "eventStatus": "Completed",
+    "eventPriority": 6,
+    "lastEventDate": "8/5/2021",
+}');
+
+
+INSERT INTO partLogs VALUES("10a1", "engine", "2", '{
+    "serial" : "10a1",
+    "name" : "engine",
+    "position" : 2,
+    "startDate" : "2020/3/30",
+    "endDate" : "2021/3/29"
+    "events" : ["2002-2asdf"]
+}');
+
+SELECT 'Aircraft TABLE:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~';
+SELECT * FROM aircraft;
+SELECT 'Parts TABLE:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~';
+SELECT * FROM parts;
+SELECT 'Part Logs TABLE:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~';
+SELECT * FROM partLogs;
+SELECT 'Events TABLE:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~';
+SELECT * FROM events;
+SELECT '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~';
+
+
+
+
+
