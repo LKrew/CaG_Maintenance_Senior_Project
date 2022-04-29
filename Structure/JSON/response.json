@@ -1,0 +1,13 @@
+{
+"standardResponse": {
+    "domain": "Maintenance",
+    "returnCode": 0,
+    "errorMessage": "",
+    "responseType": "GOOD",
+    "count": 1,
+    "timeStampOfMessage": "timestam",
+    "language": "EN"
+  },
+  "responseMessage":{
+}
+}

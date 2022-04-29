@@ -1,0 +1,26 @@
+{   
+    "eventId": "",
+    "cagID" : "",
+    "serial" : "",
+    "name": "",
+    "position": "",
+    "intervals" : [
+        {
+            "unit" : "",
+            "value" : "",
+            "bufferValue" : "",
+            "lastEventDate" : ""
+        }
+    ],
+    "maintenanceType" : "",
+    "maintenanceSubType" : "",
+    "esimatedDueDate" : "",
+    "dueDate" : "",
+    "unit" : "",
+    "eventDescription" : "",
+    "documentName" : "",
+    "documentLoc" : "",
+    "eventStatus" : "",
+    "eventPriority" : "",
+    "lastEventDate" : ""
+}

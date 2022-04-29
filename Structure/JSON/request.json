@@ -1,0 +1,13 @@
+{
+    "commonParms" : {
+    "action": "read",
+    "view": "maintenance",
+    "version": "1.0.0"
+    },
+    "request": {
+        "type" : "Part",
+        "identifiers":{
+            "primaryID" : "10a1"
+        }
+    }
+}
